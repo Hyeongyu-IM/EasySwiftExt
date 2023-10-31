@@ -2,7 +2,7 @@
 
 ## Installation
 
-To install this package, import '' in SPM.
+To install this package, import 'https://github.com/Hyeongyu-IM/EasySwiftExt' in SPM.
 
 This package seperate Foundation(EasySwiftExt), UIKit(EasyUIKitExt)
 
