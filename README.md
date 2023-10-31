@@ -12,3 +12,7 @@ To install this package, import 'https://github.com/Hyeongyu-IM/EasySwiftExt' in
 This package seperated Foundation(EasySwiftExt), UIKit(EasyUIKitExt)
 
 you can add what you need :)
+
+## [License](https://github.com/Hyeongyu-IM/EasySwiftExt#license)
+
+EasySwiftExt is under MIT license. See the [LICENSE](https://github.com/Hyeongyu-IM/EasySwiftExt/blob/main/LICENSE) file for more info.
