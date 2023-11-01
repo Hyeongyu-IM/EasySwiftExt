@@ -19,7 +19,7 @@ extension UIApplication {
      - Returns: 현재의 keyWindow. `UIWindow` 객체 또는 `nil`을 반환할 수 있습니다.
      */
 
-    var keyWindow : UIWindow? {
+    public var keyWindow : UIWindow? {
         return self.connectedScenes
                  .filter { $0.activationState == .foregroundActive }
                  .compactMap { $0 as? UIWindowScene }.first?.windows

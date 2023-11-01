@@ -14,7 +14,7 @@ extension Double {
      - Returns: 소수점 이하의 0을 제거한 문자열
      Tag: #소수점
      */
-    func forTrailingZero() -> String {
+    public func forTrailingZero() -> String {
         let removeZero = String(format: "%g", self)
         return removeZero
     }

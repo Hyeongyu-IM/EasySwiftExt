@@ -13,7 +13,7 @@ extension Array {
      배열이 비어있지 않은지 여부를 나타내는 불리언 값입니다.
      Tag: #Array, #Empty
      */
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return !self.isEmpty
     }
     

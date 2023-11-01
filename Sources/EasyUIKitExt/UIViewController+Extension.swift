@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     /**
      주어진 뷰 컨트롤러를 최상위 뷰 컨트롤러 위에 모달로 표시합니다.
      

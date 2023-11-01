@@ -13,7 +13,7 @@ extension Int {
      3자리마다 콤마를 추가한 문자열로 변환합니다.
      Tag: #콤마, #.
      */
-    var withComma: String {
+    public var withComma: String {
         let decimalFormatter = NumberFormatter()
         decimalFormatter.numberStyle = NumberFormatter.Style.decimal
         decimalFormatter.groupingSeparator = ","
@@ -27,7 +27,7 @@ extension Int {
      - Returns: 정수를 문자열로 변환한 값
      Tag: #IntToString
      */
-    func toString() -> String {
-            "\(self)"
+    public var toString: String {
+        return "\(self)"
     }
 }

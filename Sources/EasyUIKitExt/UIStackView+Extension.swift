@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIStackView {
+public extension UIStackView {
     /**
      뷰를 배열 형태의 하위 뷰에서 제거하고 해당 뷰를 상위 뷰에서도 제거합니다.
      

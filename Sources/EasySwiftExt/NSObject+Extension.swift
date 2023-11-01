@@ -10,7 +10,7 @@ import Foundation
 extension NSObject {
     ///클래스 이름 가져오기
     ///Tag: #Class, #name
-    var theClassName: String {
+    public var theClassName: String {
         return NSStringFromClass(type(of: self))
     }
 }

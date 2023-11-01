@@ -16,7 +16,7 @@ extension UIButton {
        - state: 설정할 상태 (`UIControl.State`)입니다.
      Tag: #Button, #Background, #Image
      */
-    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+    public func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
         UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.setFillColor(color.cgColor)

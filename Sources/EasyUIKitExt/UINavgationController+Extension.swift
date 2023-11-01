@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
     
     /**
      `pushViewController` 메서드를 호출할 때 완료 핸들러를 추가하는 메서드입니다.

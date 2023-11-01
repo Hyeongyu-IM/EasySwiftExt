@@ -8,7 +8,7 @@
 import Foundation
 
 extension Dictionary {
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return !self.isEmpty
     }
 }

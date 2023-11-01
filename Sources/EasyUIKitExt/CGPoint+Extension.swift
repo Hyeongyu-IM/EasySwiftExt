@@ -10,11 +10,11 @@ import Foundation
 
 extension CGPoint {
    
-   enum CoordinateSide {
+    public enum CoordinateSide {
        case topLeft, top, topRight, right, bottomRight, bottom, bottomLeft, left
    }
    ///그라데이션 보더뷰 만들때 사용함.
-   static func boderPoint(_ side: CoordinateSide) -> CGPoint {
+   static public func boderPoint(_ side: CoordinateSide) -> CGPoint {
        let x: CGFloat
        let y: CGFloat
 

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Set {
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return self.isEmpty == false
     }
 }

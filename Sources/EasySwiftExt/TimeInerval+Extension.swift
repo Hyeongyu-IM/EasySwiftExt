@@ -10,39 +10,39 @@ import Foundation
 
 extension TimeInterval {
     
-    static var oneHour: TimeInterval {
+    static public var oneHour: TimeInterval {
         return 3600
     }
     
-    static var twoHour: TimeInterval {
+    static public var twoHour: TimeInterval {
         return oneHour * 2
     }
     
-    static var oneDay: TimeInterval {
+    static public var oneDay: TimeInterval {
         return oneHour * 24
     }
     
-    static var twoDays: TimeInterval {
+    static public var twoDays: TimeInterval {
         return oneDay * 2
     }
     
-    static var threeDays: TimeInterval {
+    static public var threeDays: TimeInterval {
         return oneDay * 3
     }
     
-    static var oneWeek: TimeInterval {
+    static public var oneWeek: TimeInterval {
         return oneDay * 7
     }
     
-    static var oneMonth: TimeInterval {
+    static public var oneMonth: TimeInterval {
         return oneDay * 30
     }
     
-    static var oneYear: TimeInterval {
+    static public var oneYear: TimeInterval {
         return oneDay * 365
     }
     
-    static func customHour(hour: Int) -> TimeInterval {
+    static public func customHour(hour: Int) -> TimeInterval {
         return oneHour * Double(hour)
     }
 }

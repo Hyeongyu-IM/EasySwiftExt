@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIWindow {
+public extension UIWindow {
     /**
      현재 화면에서 가장 보이는(view hierarchy에서 최상위) 뷰 컨트롤러를 반환합니다.
      Tag: #visible, #Top

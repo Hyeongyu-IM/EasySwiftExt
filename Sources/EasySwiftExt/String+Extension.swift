@@ -12,11 +12,11 @@ extension String {
     /**
      문자열이 비어있는지 확인합니다.
      */
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return !self.isEmpty
     }
     
-    func convertToDate(format: DateFormat) -> Date {
+    public func convertToDate(format: DateFormat) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         dateFormatter.timeZone = .KR
@@ -30,7 +30,7 @@ extension String {
      
      - Returns: 유효한 닉네임인 경우 true를 반환합니다.
      */
-    func isNickName() -> Bool {
+    public func isNickName() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣㆍ\\s]$", options: .caseInsensitive)
             if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
@@ -48,7 +48,7 @@ extension String {
      
      - Returns: 한글인 경우 true를 반환합니다.
      */
-    func isHangul() -> Bool {
+    public func isHangul() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[가-힣ㄱ-ㅎㅏ-ㅣ\\s]$", options: .caseInsensitive)
             if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
@@ -66,7 +66,7 @@ extension String {
      
      - Returns: 전화번호 형식인 경우 true를 반환합니다.
      */
-    func isPhone() -> Bool {
+    public func isPhone() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^01([0|1|6|7|8|9])([0-9]{4})([0-9]{4})$", options: .caseInsensitive)
             if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
@@ -83,7 +83,7 @@ extension String {
      입력된 문자열이 이메일 형식인지 확인합니다.
      - Returns: 이메일 형식인 경우 true를 반환합니다.
      */
-    func isEmail() -> Bool {
+    public func isEmail() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}$", options: .caseInsensitive)
             if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
@@ -104,7 +104,7 @@ extension String {
      
      - Returns: 변환된 정수 값.
      */
-    func toInt() -> Int {
+    public func toInt() -> Int {
         return Int(self) ?? 0
     }
     
@@ -113,7 +113,7 @@ extension String {
      
      - Returns: 변환된 실수 값.
      */
-    func toDouble() -> Double {
+    public func toDouble() -> Double {
         return Double(self) ?? 0
     }
     
@@ -122,7 +122,7 @@ extension String {
      
      - Returns: 전화번호 형식으로 변환된 문자열. 예: "010-1234-5678"
      */
-    func phoneNumber() -> String {
+    public func phoneNumber() -> String {
         let _str = self.replacingOccurrences(of: "-", with: "") // 하이픈 모두 제거
         let arr = Array(_str)
         if arr.count > 11 {
@@ -159,7 +159,7 @@ extension String {
      - font: 문자열의 폰트
      - Returns: 문자열의 높이
      */
-    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+    public func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect,
                                             options: [.usesLineFragmentOrigin, .usesFontLeading],
@@ -172,7 +172,7 @@ extension String {
      레이블의 넓이줌
      - Returns: 문자열의 넓이
      */
-    func labelWidth(font: UIFont) -> CGFloat {
+    public func labelWidth(font: UIFont) -> CGFloat {
         let nsString = self as NSString
         let width = nsString.size(withAttributes: [.font: font]).width
         return width
@@ -183,7 +183,7 @@ extension String {
      문자열에 취소선을 적용한 NSAttributedString을 반환합니다.
      - Returns: 취소선이 적용된 NSAttributedString
      */
-    func strikeThrough() -> NSAttributedString {
+    public func strikeThrough() -> NSAttributedString {
         let attributeString = NSMutableAttributedString(string: self)
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
                                      value: NSUnderlineStyle.single.rawValue,
@@ -194,38 +194,38 @@ extension String {
 
 //MARK: -- Subscript
 extension String {
-    subscript (i: Int) -> Character {
+    public subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }
     
-    subscript (bounds: CountableRange<Int>) -> Substring {
+    public subscript (bounds: CountableRange<Int>) -> Substring {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         if end < start { return "" }
         return self[start..<end]
     }
     
-    subscript (bounds: CountableClosedRange<Int>) -> Substring {
+    public subscript (bounds: CountableClosedRange<Int>) -> Substring {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         if end < start { return "" }
         return self[start...end]
     }
     
-    subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
+    public subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(endIndex, offsetBy: -1)
         if end < start { return "" }
         return self[start...end]
     }
     
-    subscript (bounds: PartialRangeThrough<Int>) -> Substring {
+    public subscript (bounds: PartialRangeThrough<Int>) -> Substring {
         let end = index(startIndex, offsetBy: bounds.upperBound)
         if end < startIndex { return "" }
         return self[startIndex...end]
     }
     
-    subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
+    public subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
         let end = index(startIndex, offsetBy: bounds.upperBound)
         if end < startIndex { return "" }
         return self[startIndex..<end]
@@ -238,7 +238,7 @@ extension String {
      숫자만 필터링된 문자열을 반환합니다.
      - Returns: 숫자만 포함된 문자열
      */
-    var decimalFilteredString: String {
+    public var decimalFilteredString: String {
         return String(unicodeScalars.filter(CharacterSet.decimalDigits.contains))
     }
     
@@ -248,7 +248,7 @@ extension String {
      - patternString: 패턴 문자열. 숫자 자리는 "#"으로 표시합니다.
      - Returns: 포맷팅된 문자열
      */
-    func formated(by patternString: String) -> String {
+    public func formated(by patternString: String) -> String {
         let digit: Character = "#"
         
         let pattern: [Character] = Array(patternString)

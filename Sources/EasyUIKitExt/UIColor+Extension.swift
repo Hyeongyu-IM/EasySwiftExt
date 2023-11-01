@@ -7,7 +7,7 @@
 import UIKit
 
 //MARK: -- 기능 extension
-extension UIColor {
+public extension UIColor {
     convenience init(red: Int, green: Int, blue: Int, a: Int = 0xFF) {
         self.init(
             red: CGFloat(red) / 255.0,

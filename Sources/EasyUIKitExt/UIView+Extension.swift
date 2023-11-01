@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /**
      여러 개의 뷰를 현재 뷰에 추가합니다.
      
@@ -19,7 +19,7 @@ extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     /**
      현재 뷰에 회색 그라디언트 효과를 적용합니다.
      
@@ -221,7 +221,7 @@ extension UIView {
     }
 }
 
-extension CALayer {
+public extension CALayer {
     /**
      Sketch 소프트웨어의 그림자 효과를 적용합니다.
      

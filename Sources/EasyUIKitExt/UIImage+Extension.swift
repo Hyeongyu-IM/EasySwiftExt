@@ -8,7 +8,7 @@
 import UIKit
 import CoreGraphics
 
-extension UIImage {
+public extension UIImage {
     /**
      Tag: #imageResize, #Reisze
      */
@@ -45,7 +45,7 @@ extension UIImage {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     // MARK: - UIImage+Resize
     func compressTo(_ expectedSizeInKB: Int) -> Data? {
         let sizeInBytes = expectedSizeInKB * 1024
@@ -77,7 +77,7 @@ extension UIImage {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     /**
      이미지의 알파(alpha) 값을 조정하여 투명도를 변경합니다.
 

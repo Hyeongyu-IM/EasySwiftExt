@@ -66,7 +66,7 @@ public enum DateFormat: String {
 }
 
 extension Date {
-    func convertToString(withFormat format: DateFormat) -> String {
+    public func convertToString(withFormat format: DateFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         dateFormatter.timeZone = .KR
@@ -75,7 +75,7 @@ extension Date {
     }
     
     ///#오전#오후 구분
-    func isAM() -> Bool {
+    public func isAM() -> Bool {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour], from: self)
         if let hour = components.hour {
@@ -88,7 +88,7 @@ extension Date {
      현재 시간의 분을 반환합니다.
      - Returns: 현재 시간의 분 TimeZone(abbreviation: "GMT") nil인 경우 -1
      */
-    func getMin() -> Int {
+    public func getMin() -> Int {
         var calendar = Calendar.current
         guard let timeZone = TimeZone(abbreviation: "GMT") else { return -1 }
         calendar.timeZone = timeZone

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension TimeZone {
-    static var KR: TimeZone {
+    static public var KR: TimeZone {
         return TimeZone(abbreviation: "KST")!
     }
 }

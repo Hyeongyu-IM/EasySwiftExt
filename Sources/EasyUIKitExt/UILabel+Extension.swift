@@ -6,8 +6,8 @@
 //
 import UIKit
 
-extension UILabel {
-    /**     
+public extension UILabel {
+    /**
      버튼 내 텍스트가 표시될 때 최대로 표시될 수 있는 줄 수를 계산합니다.
      - Returns: 버튼 내 텍스트가 최대로 표시될 수 있는 줄 수를 반환합니다.
      Tag: #Button, #Text
@@ -23,7 +23,7 @@ extension UILabel {
     }
 }
 
-extension UILabel {
+public extension UILabel {
     /**
      Label의 어트리뷰트 텍스트를 업데이트하기 위한것
      단 "" 이렇게 하면 안됨 최소 공백 하나는 있어야함

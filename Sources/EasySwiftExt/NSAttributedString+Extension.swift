@@ -21,12 +21,12 @@ extension NSAttributedString {
      Author: [작성자]
      Tag:
      */
-    func updateAttString(_ text: String) -> NSAttributedString {
+    public func updateAttString(_ text: String) -> NSAttributedString {
         let attributes = self.attributes(at: 0, effectiveRange: nil)
         return NSMutableAttributedString(string: text, attributes: attributes)
     }
     
-    func addIcon(icon: UIImage, isLeftIcon: Bool = true) -> NSAttributedString {
+    public func addIcon(icon: UIImage, isLeftIcon: Bool = true) -> NSAttributedString {
         if let font = self.attribute(NSAttributedString.Key.font, at: 0, effectiveRange: nil) as? UIFont {
             let mutableAttText = NSMutableAttributedString()
             mutableAttText.append(self)
@@ -51,7 +51,7 @@ extension NSAttributedString {
     /**
      텍스트가 넓이 리턴
      */
-    var labelWidth: CGFloat {
+    public var labelWidth: CGFloat {
         if let font = self.attribute(NSAttributedString.Key.font, at: 0, effectiveRange: nil) as? UIFont {
             let text = self.string as NSString
             return text.size(withAttributes: [.font: font]).width
@@ -62,13 +62,13 @@ extension NSAttributedString {
 
 // MARK: - Operators
 public extension NSAttributedString {
-    static func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
+    static public func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
         let string = NSMutableAttributedString(attributedString: lhs)
         string.append(rhs)
         return NSAttributedString(attributedString: string)
     }
     
-    func applying(attributes: [Key: Any]) -> NSAttributedString {
+    public func applying(attributes: [Key: Any]) -> NSAttributedString {
         guard !string.isEmpty else { return self }
         
         let copy = NSMutableAttributedString(attributedString: self)
